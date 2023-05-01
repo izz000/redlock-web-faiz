@@ -13,5 +13,6 @@ pipeline
             {
                 sh "docker build -t redlock-web-2.0 ."
             }
+        }
     }
 }
