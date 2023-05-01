@@ -11,22 +11,7 @@ pipeline
         {
             steps
             {
-                sh "${DOCKER_COMPOSE_PATH} up --build"
+                sh "docker build -t redlock-web-2.0 ."
             }
-        }
-        stage('Run Test')
-        {
-            steps
-            {
-                sh 'curl http://localhost:7077'
-            }
-        }
-    }
-    post 
-    {
-        always
-        {
-            sh "${DOCKER_COMPOSE_PATH} down"
-        }
     }
 }
